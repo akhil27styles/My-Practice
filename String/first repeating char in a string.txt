@@ -1,0 +1,34 @@
+using libraray
+static char firstRepeating(char str[]) 
+    { 
+        // Creates an empty hashset 
+        HashSet<Character> h = new HashSet<>(); 
+  
+        // Traverse the input array from left to right 
+        for (int i=0; i<=str.length-1; i++) 
+        { 
+            char c = str[i]; 
+  
+            // If element is already in hash set, update x 
+            // and then break 
+            if (h.contains(c)) 
+                return c; 
+  
+            else // Else add element to hash set 
+                h.add(c); 
+        } 
+  
+        return '\0'; 
+    } 
+
+without using libraray
+private static int findFirstRepeated(String str){
+        for(int i = 0; i < str.length(); i++){
+            char c = str.charAt(i);
+            for(int j = i+1; j < str.length(); j++){
+                if(c == str.charAt(j))
+                return j;
+            }
+        }
+        return -1;
+    }
