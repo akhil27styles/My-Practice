@@ -1,0 +1,38 @@
+//iterative approach
+class ReverseLL
+{
+    // This function should reverse linked list and return
+   // head of the modified linked list.
+   Node reverseList(Node head)
+   {
+        // add code here
+        Node curr=head;
+        Node prev=null;
+        Node next=null;
+        while(curr!=null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+           
+        }
+        head=prev;
+        return head;
+   }
+}
+
+//recursive approach
+static Node reverse(Node head)
+  {
+if(head==null){
+return head;
+}
+if(head.next==null){
+return head;
+}
+Node a=new Node(head.next);
+// change references for middle chain 
+head.next.next=head;
+head.next=null;
+return a;
+}

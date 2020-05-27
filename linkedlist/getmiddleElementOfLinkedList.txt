@@ -1,0 +1,30 @@
+    int getsize(Node head){
+         int size=0;
+         while(head!=null){
+             size++;
+             head=head.next;
+         }
+         return size;
+     }
+    int getMiddle(Node head)
+  {
+
+          int length=getsize(head);
+         for(int i=0;i<length/2;i++){
+             head=head.next;
+         }
+          return head.data;
+   }
+
+
+    int getsize(Node head){
+ if(head==null){ return -1;}
+        Node fast=head;
+        Node slow=head;
+        while(fast!=null&&fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        return slow.data;
+  }
+}

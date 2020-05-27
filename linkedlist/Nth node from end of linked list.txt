@@ -1,0 +1,54 @@
+1st approach
+
+class GfG
+{
+    // Function to find the nth node from end in the linked list
+    // head: head of the linked list
+    // n: nth node from end to find
+    int getNthFromLast(Node head, int n)
+    {
+    	// Your code here
+    	Node temp=head;
+    	int length=0,ans=0,limit=0,found=0;
+    	while(temp!=null){
+    	    length++;
+    	    temp=temp.next;
+    	}
+    	int i=0;
+    	if(n>length){
+    	    return -1;
+    	}
+    	while(head!=null){
+    	    if(i==length-n){
+    	        ans= head.data;
+    	        break;
+    	    }
+    	    head=head.next;
+    	    i++;
+    	}
+    	return ans;
+    }
+}
+
+
+
+
+
+
+2nd approach
+
+
+class GfG{
+    public int getNthFromLast(Node head, int n){
+        Node p = head, f = head;
+        for(int i=1; i<=n-1; i++){
+            f = f.next;
+            if(f == null) return -1;
+        }
+        while(f.next != null){
+            p = p.next;
+            f = f.next;
+        }
+        return p.data;
+    }
+}

@@ -1,0 +1,47 @@
+class Palindrome
+{
+    // Function to check if linked list is palindrome
+    boolean isPalindrome(Node head) 
+    {
+        //Your code here
+        boolean ispalin=true;
+   Stack<Integer> n=new Stack<Integer>();
+   Node temp=head;
+  
+   while(temp!=null){
+       n.push(temp.data);
+       temp=temp.next;
+   }
+   while(head!=null){
+       int i=n.pop();
+       if(i==head.data){
+       ispalin=true;
+   }
+   else{
+       ispalin=false;
+       break;
+   }
+   head=head.next;
+}
+return ispalin;
+}
+}
+
+2nd approach
+boolean isPalindrome(Node head)
+{
+ArrayList<integer> al = new ArrayList<integer>();
+while(head!=null)
+{
+al.add(head.data);
+head=head.next;
+}
+int n = al.size();
+
+for(int i=0;i<=n/2;i++)
+{
+if(al.get(i)!=al.get(n-i-1))
+return false;
+}
+return true;
+}
