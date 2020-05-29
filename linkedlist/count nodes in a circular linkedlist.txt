@@ -1,0 +1,12 @@
+static int countNodes(Node head)
+{
+Node temp=head;
+int i=0;
+if(head!=null){
+ do{
+ temp=temp.next;
+i++;
+}
+while(temp!=head);
+return i;
+}
