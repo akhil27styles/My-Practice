@@ -1,0 +1,21 @@
+*Complete the function below*/
+class GfG{
+	public Stack<Integer> sort(Stack<Integer> s)
+	{
+		//add code here.
+	if(s==null||s.isEmpty()){
+	    return s;
+	}
+		Stack<Integer> s1=new Stack<>();
+	while(!s.isEmpty()){
+
+	int num=s.pop();
+	while(!s1.isEmpty()&&s1.peek()>num){
+	    s.push(s1.pop());
+	}
+	s1.push(num);
+	}
+	return s1;
+	      
+	}
+}
