@@ -1,0 +1,42 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+class GFG {
+    public static void nextGreaterToLeft(int a[],int size){
+        ArrayList<Integer> v=new ArrayList<>();
+        Stack<Integer> s=new Stack<>();
+        for(int i=0;i<size;i++){
+            if(s.size()==0){
+                v.add(-1);
+            }
+            else if(s.size()>0&&s.peek()>a[i]){
+                v.add(s.peek());
+            }
+            else if(s.size()>0&&s.peek()<=a[i]){
+                while(s.size()>0&&s.peek()<=a[i])
+                s.pop();
+                if(s.size()==0){
+                    v.add(-1);
+                }
+                else{
+                    v.add(s.peek());
+                }
+                
+            }
+           s.push(a[i]);
+        }
+        for(int i=0;i<size;i++){
+            System.out.print(v.get(i)+" ");
+        }
+    }
+	public static void main (String[] args) {
+		int a[]={7,9,1,5,8};
+		int n=a.length;
+		System.out.println("Next Greater To Left");
+        nextGreaterToLeft(a,n);
+	
+
+	}
+}
