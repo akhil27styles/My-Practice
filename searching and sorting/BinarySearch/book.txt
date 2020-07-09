@@ -1,0 +1,54 @@
+
+public class Main
+{
+    public static boolean isvalid(int a[],int n,int k,int max){
+        int student =1;
+        int sum=0;
+        for(int i=0;i<n;i++){
+            sum=sum+a[i];
+        
+        if(sum>max){
+            student++;
+            sum=a[i];
+        }
+        if(student>k){
+            return false;
+        }
+        }
+        return true;
+        
+    }
+    public static int sum(int a[]){
+        int sum=0;
+        for(int i=0;i<a.length;i++){
+            sum=sum+a[i];
+        }
+        return sum;
+    }
+    public static int findpage(int a[],int k,int max,int start,int end){
+        int res=-1;
+    	while(start<=end){
+		    int mid=start+(end-start)/2;
+		    
+		    if(isvalid(a,a.length,k,max)==true){
+		        res=mid;
+		        end=mid-1;
+		    }
+		    else{
+		        start=mid+1;
+		    }
+		}
+		return res;
+    }
+	public static void main(String[] args) {
+		int a[]={10,20,30,40};
+		int start=40; //max element in the array
+		int max=40;
+		int k=2;
+		int end=sum(a);
+		int res=findpage(a,k,max,start,end);
+	
+		System.out.println(res);
+		
+	}
+}
