@@ -1,0 +1,182 @@
+Game Of Rotations
+Problem
+Submissions
+Leaderboard
+Given an N numbers array. Rotate the elements of the array in the direction specified by the user(Left or right). If rotation index is Negative, rotate Left otherwise rotate Right
+
+Input Format
+
+Input will contain 2 lines.
+First line contains the 2 integers specifying number of elements and the rotation index.
+Second line contains space separated elements of the array.
+
+Constraints
+
+N >= 1
+
+Output Format
+
+Space separated elements of the array
+
+Sample Input 0
+
+7 -2        
+1 2 3 4 5 6 7
+Sample Output 0
+
+3 4 5 6 7 1 2
+Explanation 0
+
+-2 means 2 left rotations.
+So 1, 2 goes to the back of the array
+
+
+
+
+
+---------------------------------------------
+how bout a DATE?
+Problem
+Submissions
+Leaderboard
+user will enter a date. You have to give the total number of days starting from the first day of the year. Given the month and day of the month, You have to give total days as output.
+If given date is out of range, Print Not Valid
+
+Input Format
+
+Input will consist of two integers in separate lines.
+First input will define the month
+Second input is the day in that month
+
+Constraints
+
+1 <= month <= 12 1 <= days <= 31
+
+Output Format
+
+Output will consist of only 1 integer showing the number of days.
+
+Sample Input 0
+
+5 22
+Sample Output 0
+
+142
+--------------------------------------------------------------
+Prime Factors 6
+Problem
+Submissions
+Leaderboard
+Take a number as input and print all the prime factors.
+
+Input Format
+
+Input will contain 1 line indicating the number whose prime factors are to be found
+
+Constraints
+
+1 <= N <= 1000
+
+Output Format
+
+Output should give all the prime factors separated by comma (,)
+
+Sample Input 0
+
+60
+Sample Output 0
+
+2,3,5
+Sample Input 1
+
+24
+Sample Output 1
+
+2,3
+-----------------------------------------------------------
+The Return of Odd and Even 1
+Problem
+Submissions
+Leaderboard
+You will be given two integers A,B as input. Starting from A print all the completely odd and completely even numbers.
+
+Input Format
+
+Input will consist of two lines.
+First line will contain the value of A.
+Second line will contain the value of B.
+
+Constraints
+
+A,B >=1
+
+Output Format
+
+Output will consist of two lines.
+First line contains all the odd numbers.
+Second line contains all the even numbers.
+
+Sample Input 0
+
+25
+79
+Sample Output 0
+
+31 33 35 37 39 51 53 55 57 59 71 73 75 77 79 
+26 28 40 42 44 46 48 60 62 64 66 68 
+Contest ends in 4 minutes
+Submissions: 32
+Max Score: 15
+Difficulty: Easy
+Rate This Challenge:
+
+    
+More
+ 
+1
+import java.io.*;
+2
+import java.util.*;
+3
+​
+4
+public class Solution {
+5
+​
+6
+    public static void main(String[] args) {
+7
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+8
+        Scanner in=new Scanner(System.in);
+9
+        int a=in.nextInt();
+10
+         int b=in.nextInt();
+11
+        for(int i=a;i<=b;i++){
+12
+            if((1+i)%2==0||(i-1)%2==0){
+13
+                System.out.print(i+" ");
+14
+            }
+15
+        }
+16
+         System.out.println();
+17
+        for(int i=a;i<=b;i++){
+18
+            if(i%2!=0&&i%2==1){
+19
+                System.out.print(i+" ");
+20
+            }
+21
+        }
+22
+    }
+23
+}
+------------------------------------------------
