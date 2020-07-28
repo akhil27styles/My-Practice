@@ -1,0 +1,916 @@
+Given the following program fragment
+main ()
+{
+	int i, j, k;
+	i = 3;
+	 j =2*(i++);
+	 k =2*(++i);
+}
+which one of the given option is correct?
+(A) j = 6, k = 10.(B) i = 5, k = 6.(C) j = 6, k = 8.(D) i = 4, j = 6.Answer : j = 6, k = 10.Description :
+Explanation : In the expression  j = 2 * (i++)   
+the value of i is used before incrementing and  in expression    k =2*(++i); will get incremented first and then used in the expression 
+------------------------------------------------------------------------
+Ques 5 : switch(option)
+{
+	case 'H' : printf("Hello");
+	case 'W' : printf("Welcome");
+	case 'B' : printf("Bye");
+	break;
+}
+what would be the output if option = 'H' ?
+(A) Hello(B) Hello Welcome(C) Hello Welcome Bye(D) None of the aboveAnswer :
+ Hello Welcome ByeDescription :If option = H then the first case is true so "Hello" 
+gets printed but there is no break statement after this case to come out of the switch
+ statement so the program execute all other case statements also and Hello Welcome Bye get printed.
+----------------------------------------------------------------------------
+main()
+{
+	int a,b,c;
+	a=10;
+	b=20;
+	c=printf("%d",a)+ ++b;
+	printf("\n%d",c);
+}
+printf() will return no. of bytes it printed
+Expression becomes
+ c = 2 + ++b; 
+then value of b is incremented before addition
+Suppose  a=1011 means 4 bytes then the value of c will be 25
+-----------------------------------------------------------------------------
+What the below statement will print if a=10
+printf("%d %d",a, !a++);
+(A) 11 0(B) 10 10(C) 10 0(D) 0 10Answer : 11 0Description :Values in the function get passed from right to left. First !a++ get processed which pass zero as argument and make a equal to 11
+---------------------------------------------------------------------------
+main()
+{
+	int i;
+	i = 10;
+	if(i == 20 || 30)
+	{
+		printf("True");
+	}
+	else
+	{
+		printf("False");
+	}
+}
+(A) True(B) False(C) Syntax Error(D) Run time ErrorAnswer : TrueDescription :i==20 is a expression which will return TRUE or FALSE depending on the value of i. In this program it will return 0 so the statement become
+If ( 0 || 30)
+30 is a nonzero value which means TRUE (1) in C when ORed with 0 will result TRUE.
+--------------------------------------------------------------------------------
+main()
+{
+	if(1,0)
+	{
+		printf("True");
+	}
+	else
+	{
+		printf("False");
+	}
+}
+(A) True
+(B) False
+(C) Compilation Error
+(D) Run time Error
+Answer : False 
+Description :comma(,) operator returns the value which at the right hand side 
+of , . if statement become if(0) 
+
+if(0,1) is there then it will become false
+-------------------------------------------------------------------------------
+Option c) type casting. DLL and Functions help in modularization of a program while typecasting just converts from one data type to another.
+-------------------------------------------------------------------------------
+#include<stdio.h>
+int main()
+{
+	int a = 320;
+	char *ptr;
+	ptr = (char *)&a;
+	printf("%d",*ptr);
+	return 0;
+}
+(A) 2(B) 320(C) 64(D) Compilation ErrorAnswer : 64Description :As we know int is two byte data byte while char is one byte data byte. Character pointer can keep the address one byte at time.
+Binary value of 320 is 00000001 01000000 (In 16 bit) Memory representation of int a = 320 is:
+So ptr is pointing only first 8 bit which color is  green and Decimal value is 64. 
+--------------------------------------------------------------------------------------
+Ques 2 : What will be the output of the following program?
+main()
+{
+    printf(3+"Proskills"+4);
+}
+(A) Compilation Error
+(B) skills
+(C) kills
+(D) ls
+Answer : lsDescription :Proskills is a constant string and statement
+ printf(3+"Proskills"+4);  will skip seven(3 + 4) characters of the string before printing.
+---------------------------------------------------------------------------
+Ques 5 : What will be the output
+ main()
+{
+   int i;
+   i = 10;
+   printf("%d\t",5,6);
+   printf("%d", i , i++);
+}
+(A) 5 11
+(B) 6 10
+(C) 6 11
+(D) 5 10
+Answer : 5 11Description :Value in a function get passed from right to left.
+ First i++ get passed and it make i = 11.
+---------------------------------------------------------------------------
+Ques 8 : How many times the while loop will get executed?
+     main ( )
+     {
+           int a = 1 ;
+           while ( a <= 100) ;
+            {
+                  printf ( "%d", a++ ) ;
+              }
+       }
+(A) 100
+(B) 1
+(C) 0
+(D) Infinite
+Answer : InfiniteDescription :Loop will execute infinite no of times because of the ; at the end while loop.
+--------------------------------------------------------------------------
+Ques 9 : What will be the output
+main()
+{
+     char *ptr = "Pskills.org";
+     char a =
+     printf("%c", ++*ptr++);
+}
+(A) Compilation Error
+(B) Q
+(C) P
+(D) a
+Answer : QDescription :++*ptr++ will retrieve the value currently pointed by ptr i.e P and then increment the value and will print Q
+---------------------------------------------------------------------------
+ There are four storage classes in C those are
+ automatic, register, static, and external.
+--------------------------------------------------------------------------
+How many variables scopes are there in "C" language?
+body, function, program and file scope in "C".
+-------------------------------------------------------------------------
+#include "stdio.h"
+int a;
+main(){
+	printf("\n a= %d",a);
+	return 0;
+}
+(A) a=0
+-------------------------------------------------------------------------
+#include "stdio.h"
+extern int a;
+main(){
+	printf("\n a=%d",a);
+	return 0;
+}
+int a=5
+ans=5
+-------------------------------------------------------------------------
+Ques 19 : What is the output of the following code?
+#include "stdio.h"
+extern int a=5;
+main(){
+	void fun();
+	printf("\n a=%d",a);
+	fun();
+	return 0;
+	}
+	int a;
+	void fun(){
+	printf("\n in fun a=%d",a);
+}
+(A) a=0 in fun a=5
+(B) a=5 in fun a=0
+(C) a=5 in fun a=5
+(D) error
+Answer : a=5 in fun a=5
+----------------------------------------------------------------------------
+void main()
+{
+int i;
+i=0;
+if(i=55,0,10,0)
+printf("Test Skills %d",i);
+else
+printf("C Programing %d",i);
+getch ();
+}
+(A) Test Skills 55
+(B) C Programing 0
+(C) Test Skills 0
+(D) C Programing 55
+Answer : C Programing 55 
+Description :Condition is false come inside else 
+part and print C Programing 55.
+
+
+SEE i VALUE IS THER IN IF CONDITION THEN THE OUTPUT WILL BE OF else STATEMENT
+.......
+void main()
+{
+int i;
+i=0;
+if(i=15,10,5)
+printf("Programing %d",i);
+else
+printf("Skills %d",i);
+getch ();
+}
+
+AND IN THIS THE i VALUE IS NOT IN THE IF STATEMENT SO THE OUTPUT WILL BE OF
+IF STATEMENT.......
+-------------------------------------------------------------------------------
+#include "stdio.h"
+extern int a;
+main(){
+void fun();
+	printf("\n a= %d",a);
+	fun();
+	return 0;
+	}
+	int a;
+	void fun(){
+	printf("\n in fun a=%d",a);
+}
+(A) a=5 in fun a=0
+(B) a=0 in fun a=5
+(C) a=5 in fun a=5
+(D) a=0 in fun a=0
+Answer : a=0 in fun a=0
+-------------------------------------------------------------------------------
+void main(){
+	printf("%d%d%d",50,100);
+}
+ans=50,100,garbage
+-------------------------------------------------------------------------------
+void main(){
+	printf("%d%d",100,200,300);
+}
+ans=100,200
+-------------------------------------------------------------------------------
+void main(){
+	a=3.5;
+	printf("%d",a);
+}
+will give error
+--------------------------------------------------------------------------------
+#include "stdio.h"
+void fun(int _){
+	printf("%d",_);
+}
+	main(){
+	fun(23);
+	return 0;
+}
+ans 23 because _ are allowed
+---------------------------------------------------------------------------------
+void fun(auto int _){
+	print("%d",_);
+}
+main(){
+	fun(23);
+	return 0;
+}
+ans=will give error because it is auto int 
+-------------------------------------------------------------------------------
+void main(){
+	printf("%d%d",47%5,47%-5);
+	printf("%d%d%d",-47%5,-47%-5,5%7);
+}
+2,2,-2,-2,5
+--------------------------------------------------------------------------------
+main(){
+	auto a;
+	register r;
+	static s;
+	extern e;
+	printf("%d",sizeof a);
+	printf("%d",sizeof r);
+	printf("%d",sizeof s);
+	printf("%d",sizeof e);
+	return 0;	
+}
+	
+2 2 2 2
+---------------------------------------------------------------------------------
+void main(){
+	int a=80;
+	if(a++>80)
+	printf("welcome%d",a);
+	else
+	printf("hello%d",a);
+}
+hello 81 post bcz of post increment
+--------------------------------------------------------------------------------
+void main(){
+	float a;
+	a=6.7;
+	if(a==6.7)
+	printf("A");
+	else
+	printf("B");
+}
+bcz 6.7 in if is double
+so B
+---------------------------------------------------------------------------------
+void main(){
+	int a;
+	a=1;
+	while(a-->=1)
+	while(a-->=0);
+	printf("%d",a);
+}
+-3
+--------------------------------------------------------------------------------
+void main(){
+	int a;
+	a=10;
+	a*=10+2;
+	printf("%d",a);
+}
+120
+---------------------------------------------------------------------------------
+void main(){
+	int a;
+	a=100;
+	printf("%d%d",++a,a++);
+}
+102 100
+pre inc and ++a
+---------------------------------------------------------------------------------
+main ( )
+     {
+           int a = 1 ;
+           while ( a <= 100) ;
+            {
+                  printf ( â??%dâ??, a++ ) ;
+              }
+       }
+infinite
+----------------------------------------------------------------------------------
+void main(){
+	int a;
+	a=100>90>80;
+	printf("%d",a);
+}
+bcz 100>90 it will return 1 and 1>80 is not  true so it will return 0 
+0
+--------------------------------------------------------------------------------
+
+void main(){
+	int a;
+	a=1;
+	a++ * ++a;
+	printf("%d",a);
+}
+3
+-------------------------------------------------------------------------------
+void main(){
+	int a=1;
+	while(a++<=1).............1
+	while(a++<=2);.............2
+	printf("%d",a);
+}
+
+the ans:5
+the first while loop will run only 1 time and then false but in second while	
+loop there is a semicoln and it will run 2 times...
+......1 a=2
+......2 a=3 <=2 1 baar run hua
+......2 a=4 <=2 2 baar run hua
+......2 a=5 <=2 3 baar last..
+--------------------------------------------------------------------------------
+void main(){
+	int a;
+	a=1;
+	while(a<=1)
+	if(a%2)
+	printf("%d",a++);
+	printf("%d",a+10);
+}
+ans:1 12 
+a++ post incrm 
+--------------------------------------------------------------------------------
+void xyz(int p1, int *p2){
+	++p1;
+	++*p2;
+	printf("%d%d",p1,*p2);
+}
+void main(){
+	int a=10;
+	xyz(a++,++*(&a));
+	xyz(a++,++*(&a));
+	printf("%d",a);
+}
+Answer : 12 13 15 16 16
+--------------------------------------------------------------------------------
+void main(){
+	int a=1;
+	void xyz(int , int);
+	xyz(++a,a++);
+	xyz(a++,++a);
+	printf("%d",a);
+	}
+   void xyz(int x, inty){
+    printf("%d%d",x,y);
+   }
+3 1 4 4 5
+------------------------------------------------------------------------------------
+void main(){
+	int a;
+	a=1;
+	while(a-->=1)
+	while(a-->=0);
+	printf("%d",a);
+}	
+-3
+-------------------------------------------------------------------------------
+void main(){
+	printf("1");
+	goto XYZ;
+	printf("2");
+	XYZ:
+	printf("3");
+}
+ans= 1 3
+--------------------------------------------------------------------------------
+void xyz(int b){
+	++b;
+}
+void main(){
+	int b=200;
+	xyz(b);
+	xyz(b);
+	printf("%d",b);
+}
+b will not incerment 200 ans
+--------------------------------------------------------------------------------
+void abc(int a){
+	++a;
+}
+void main(){
+	int a=10;
+	abc();
+	abc();
+	printf("%d",a);
+}
+10
+--------------------------------------------------------------------------------
+void main(){
+	int a,b;
+	for(a=b=10;a;printf("%d%d%d",a,b))
+	a=b++<=12;
+	printf("%d%d",a+10,b+10);
+}
+ 1 11 1 12 1 13 0 14 10 24
+--------------------------------------------------------------------------------
+void main(){
+	int a;
+	a=10;
+	do
+	while(a++<10);
+	while(a++<=11);
+	printf("%d",a);
+}
+14
+---------------------------------------------------------------------------------
+void f1(){
+	static int s=5;
+	++s;
+	printf("%d",s);
+} 
+main(){
+	f1();
+	f1();
+}	
+there is staic thats why increment 6 7 ans  if not stataic it will not 6 7 it will 66
+---------------------------------------------------------------------------------
+void convention(int,int,int);
+int main(){
+    int a=5;   
+    convention(a,++a,a++);
+    return 0;
+}
+void  convention(int p,int q,int r){
+    printf("%d %d %d",p,q,r);
+}
+7 7 5
+---------------------------------------------------------------------------------
+void main(){
+	int a;
+	a=1;
+	while(a<=1)
+	if(a%2)
+	printf("%d",a++);
+	else
+	printf("%d",++a);
+	printf("%d",a+10);
+}
+1 12
+--------------------------------------------------------------------------------
+ #include <stdio.h>
+void main(){
+	float a;
+	a=8.0;
+	if(a==8.0)
+	printf("A");
+	else
+	printf("B");
+}
+if the float value is 8.0 or gretaer then 8.0 then the output will be of if st-
+emennt and if the value of else
+
+#include <stdio.h>
+void main(){
+	float a;
+	a=7.0;
+	if(a==7.0)
+	printf("A");
+	else
+	printf("B");
+}
+if the input is 1.0,2.0 ... etc then the output will be pf if statement
+-------------------------------------------------------------------------------
+void main(){
+	int i=10;
+	printf("%d%d%d",++i, i++, ++i);
+}
+13 11 11
+--------------------------------------------------------------------------------
+Bitwise complement of any number N is -(N+1).
+---------------------------------------------------------------------------------
+void main(){
+	int a;
+	a=1;
+	while(a<=10){
+		printf("%d",a);
+		if(a>3 && a<8)
+		continue;
+		a++;
+	}
+	printf("%d",a+10);
+}
+1 2 3 4 4 4 ...................infinite
+--------------------------------------------------------------------------------
+void main(){
+	int a;
+	a=1;
+	while(a<=10){
+		printf("%d",a);
+		if(a>3)
+		break;
+		a++;
+	}
+	printf("%d",a+10);
+}
+Answer : 1 2 3 4 14
+--------------------------------------------------------------------------------
+void main(){
+	int a,b,c,d;
+	a=b=c=d=1;
+	a=++b>1 || ++c>1 && ++d>1;
+	printf("%d%d%d",a,b,c,d);
+}
+
+Answer : 1 2 1 1
+---------------------------------------------------------------------------------
+#include <stdio.h>
+void main(){
+	int a=2;
+	switch(a)
+	{
+		case4: printf("A");
+		break;
+		case3: printf("B");
+		
+		case2: printf("C");
+		break;
+		case1: printf("D");
+		break;
+		default: printf("E");
+	}
+}
+no space in the case
+---------------------------------------------------------------------------------
+void main(){
+	int a=2;
+	switch(a)
+	{
+		case 1: printf("A");
+		case 2: printf("B");
+		case 3: printf("C");
+		break;
+		case 4: printf("D");
+		default : printf("E");
+		break;
+	}
+}
+
+
+in this concept i can say that output is BC bcz a=2 and then we get case 3 and there is
+break satement after that.. 
+
+void main(){
+	int a=2;
+	switch(a)
+	{
+		case4: printf("A");
+		break;
+		case3: printf("B");
+		case2: printf("C");
+		case1: printf("D");
+		break;
+		default: printf("E");
+	}
+
+
+there is before break satatemnt in in case 4 so the outpur of 2 will no execute
+it will be E.
+--------------------------------------------------------------------------------
+int array[20];   is an identifier
+---------------------------------------------------------------------------------
+What is the most preferred function to read a string in C?
+fgets()
+---------------------------------------------------------------------------------
+
+Which of the following is treated as a real number by default?
+double
+---------------------------------------------------------------------------------
+Which of the following in C is analogous to dictionaries in Python?
+Arrays
+----------------------------------------------------------------------------------
+int main()
+{
+const int limit = 10;
+limit++;
+printf("%d", limit);
+return 0;
+}
+can;t incmemrnt
+---------------------------------------------------------------------------------
+ Which of the following is not necessary for every C program?
+Preprocessor directive
+---------------------------------------------------------------------------------
+Which of the following has a global scope in the program?
+Macros
+---------------------------------------------------------------------------------
+ the following statements about functions 
+The main() function can be called recursively
+Functions cannot return more than one value at a time
+A function can have multiple return statements with different return values
+---------------------------------------------------------------------------------
+What is the correct way of treating 9.81 as a long double?
+9.81L
+-------------------------------------------------------------------------------------
+Which of the following statements about the null pointer is correct?
+You can declare a null pointer as char* p = (char*)0
+---------------------------------------------------------------------------------
+Which of the following statements about unions is incorrect?
+A bit field cannot be used in a union
+---------------------------------------------------------------------------------
+What is the range of double data type for a 16-bit compiler?
+-1.7e-308 to +1.7e-308
+---------------------------------------------------------------------------------
+#define PRODUCT(x) (x*x*x*x)
+int main()
+{
+int x = 2;
+int result = PRODUCT(x++);
+printf("%d %d", x, result);
+return 0;
+}
+-------------------------------------------------------------------------------
+ Which of the following is the correct way to declare a function pointer where
+ ‘pointer’ is the pointer to the function and ‘function; is the name of the function
+
+void (*pointer)(int) = &function;
+--------------------------------------------------------------------------------
+ In what way are both declarations different from each other
+int display();
+extern int display();
+Extern indicates that the function has been created in an external file
+--------------------------------------------------------------------------------
+int main()
+{
+struct DataFlair
+{
+int value;
+struct DataFlair *link;
+};
+struct DataFlair *x, *y;
+x = (struct DataFlair *) malloc(sizeof(struct DataFlair));
+y = (struct DataFlair *) malloc(sizeof(struct DataFlair));
+printf("%ld %ld",sizeof(x),sizeof(y));
+return 0;
+}
+8 8
+---------------------------------------------------------------------------------
+The structure variable is of auto storage class by default is true statement
+---------------------------------------------------------------------------------
+struct DataFlair
+{
+int a;
+float b;
+char array[20];
+}d;
+int main()
+{
+printf("%ld", sizeof(struct DataFlair));
+return 0;
+}
+28
+--------------------------------------------------------------------------------
+ Which operator is used to check if a particular bit is on or off?
+&
+--------------------------------------------------------------------------------
+int main()
+{
+if(sizeof(double) > -1)
+printf("M");
+else
+printf("m");
+return 0;
+}
+
+m 
+
+int main()
+{
+int m=sizeof(double)
+if( m> -1)
+printf("M");
+else
+printf("m");
+return 0;
+}
+
+M
+---------------------------------------------------------------------------------
+
+int main()
+{
+char result = 125;
+result = result + 5;
+printf("%d", result);
+return 0;
+}
+-126
+
+125 is represented as 01111101 in binary and when we add 10 i.e 1010 in binary it becomes : 10000111. Now what does this number represent?
+Firstly, you should know that char can store numbers only -128 to 127 since the most significant bit is kept for sign bit. Therefore 10000111 represents a negative number. To check which number it represents we find the 2’s complement of it and get 01111001 which is = 121 in decimal system. Hence, the number 10000111 represents -121.
+
+
+----------------------------------------------------------------------------------
+Out of the following declarations, which one is invalid?
+long short d=40;
+---------------------------------------------------------------------------------
+
+#include <stdio.h>
+
+int main()
+{
+    enum color{
+        r,g=-20,k,j,m};
+        
+    enum color x;
+    x=m;
+    
+    printf("%d",x);
+
+    return 0;
+}
+-17
+--------------------------------------------------------------------------------
+int main()
+{
+int a=5;
+int b=10;
+{
+int a=2;
+a++;
+b++;
+}
+printf("%d%d",a,b);
+}
+5 11
+---------------------------------------------------------------------------------
+size of char data type is one byte while size of character constant is two byte
+----------------------------------------------------------------------------------
+function is used to find the first occurence of a given string to another
+strstr()
+---------------------------------------------------------------------------------
+the function used to find the last occurence of characters
+strrchr()
+---------------------------------------------------------------------------------
+int main()
+{
+printf("java","tpoint");
+}
+java and then it will terminate
+--------------------------------------------------------------------------------
+sizeof('A')  =>>>4
+-------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main()
+{
+   char str[]="javatpoint";
+   printf("%d",*(str+strlen(str)));
+
+    return 0;
+}
+0
+---------------------------------------------------------------------------------
+char *str[]={"frogs","do","not","die","they","croak"};
+printf("%d,%d",sizeof(str),strlen(str[0]));
+
+24 ,5
+str is a pointer 6*4=24 bytes
+
+----------------------------------------------------------------------------------\
+           TEST OF POINTERS
+int i=0;
+char *q=(char*)i;
+this is not thr correct way
+
+
+char *q=(char*)0
+char *q=0
+the above two are correct way
+---------------------------------------------------------------------------------
+we   can;t perform incremnet on void pointers
+eg: void *k;
+k++;
+is wrong
+---------------------------------------------------------------------------------
+
+char **apple,char *apple[] and char apple[][] all are differnet
+---------------------------------------------------------------------------------
+char *p=0;
+char *t=NULL;
+no differnce
+NULL IS DEFINED 0 IN STDIO.H
+---------------------------------------------------------------------------------
+a null pointeris not  same as unintitailsed pointer
+---------------------------------------------------------------------------------
+*ptr++ and ++*ptr   both are different
+----------------------------------------------------------------------------------
+(void*)0  representaion of NULL pointer
+---------------------------------------------------------------------------------
+The macro NULL is defind in stdio.h .locale.h,stddef.h ,stdlib.h,string.h,time.h,wchar.h
+---------------------------------------------------------------------------------------
+a[i][j][k] 
+*(*(*(*(a+i)+j)+k)+l)
+---------------------------------------------------------------------------------
+the operator used to get value at address stored in a pointer variable
+*
+---------------------------------------------------------------------------------
+near =2,far=4,huge=4
+---------------------------------------------------------------------------------
+sizeof(NULL) is 4
+sizeof("")   is 1
+---------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main(){
+    
+void *vp;
+char ch=74,*cp="JACK";
+int j=65;
+vp=&ch;
+vp=&ch;
+printf("%c",*(char*)vp);
+vp=&j;
+printf("%c",*(int*)vp);
+vp=cp;
+printf("%s",(char*)vp+2);   //it will print the remaining string element  
+return 0;
+}
+---------------------------------------------------------------------------------
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    int i,n;
+char *x="Alice";
+n=strlen(x);
+*x=x[n];
+for(i=0;i<=n;i++)
+{
+printf("%s",x);
+x++;
+}
+printf(" ",x);
+return 0;
+}
+it is giving seg fault check it again
+---------------------------------------------------------------------------------
+
