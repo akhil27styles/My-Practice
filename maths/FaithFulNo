@@ -1,0 +1,19 @@
+class Solution {
+    static Long nthFaithfulNum(int N) {
+       // code here
+       ArrayList<Integer>a=new ArrayList<>();
+       long sum=0;
+       int i;
+       while(N!=0){
+           a.add(N%2);
+           N/=2;
+       }
+       for(i=a.size()-1;i>=0;i--){
+           if(a.get(i)==1){
+               sum+=Math.pow(7,i);
+           }
+       }
+       return sum;
+    }
+};
+https://practice.geeksforgeeks.org/problems/faithful-numbers0014/1/?category[]=Mathematical&difficulty[]=0&difficulty[]=1&page=2&query=category[]Mathematicaldifficulty[]0difficulty[]1page2
