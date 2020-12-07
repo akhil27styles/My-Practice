@@ -1,0 +1,17 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+		//code
+		Scanner in=new Scanner(System.in);
+		int t=in.nextInt();
+		while(t-->0){
+		int N=in.nextInt();
+		double ans=Math.pow(2,(int)(Math.log(N)/Math.log(2)));
+		System.out.println((int)ans);
+		}
+		
+	}
+}
