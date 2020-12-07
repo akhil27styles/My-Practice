@@ -1,0 +1,31 @@
+/*package whatever //do not write package name here */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+  
+	public static void main (String[] args) {
+		Scanner in=new Scanner(System.in);
+		int t=in.nextInt();
+		while(t-->0){
+	    String s=in.next();
+	   char ch[]=s.toCharArray();
+	    Arrays.sort(ch);
+	    StringBuilder ans = new StringBuilder(); 
+	    for(int l=0;l<ch.length;l++){
+	        ans.append(ch[l]);
+	    }
+	    int i=0;
+	    while(ans.charAt(i)=='0'){
+	        i++;
+	    }
+	    char m=ans.charAt(0);
+	    ans.setCharAt(0,ans.charAt(i));
+	    ans.setCharAt(i,m);
+	    System.out.println(ans.toString());
+    	}
+	}
+}
+https://practice.geeksforgeeks.org/problems/smallest-number-by-rearranging-digits-of-a-given-number/0/?category[]=Mathematical&difficulty[]=0&difficulty[]=1&page=2&query=category[]Mathematicaldifficulty[]0difficulty[]1page2#
